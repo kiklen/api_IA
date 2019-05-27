@@ -8,6 +8,11 @@ use App\User;
 
 class FotoController extends Controller
 {
+
+    /**
+     * @param File foto
+     * @param Integer id_usuario
+     */
     public function insertar(Request $request){
         $rules = [
             'foto' => 'required',
@@ -39,6 +44,10 @@ class FotoController extends Controller
         $data->delete();
         return $this->succes(["objeto eliminado correctamente"]);
     }
+
+    /**
+     * @param Integer id_usuario
+     */
     public function listarPorUsuario(Request $request){
         $data = User::where('id',$request->id_usuario)->first();
         $fotos = $data->foto;

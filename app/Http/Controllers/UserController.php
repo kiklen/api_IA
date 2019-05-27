@@ -7,6 +7,14 @@ use App\User;
 
 class UserController extends Controller
 {
+
+    /**
+     * @param String name
+     * @param String password
+     * @param String password_confirmation
+     * @param String nickname
+     * @param String email
+     */
     public function insertar(Request $request)
     {
         $request->validate([
